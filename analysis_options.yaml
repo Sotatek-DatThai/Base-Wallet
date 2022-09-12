@@ -25,5 +25,20 @@ linter:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
+analyzer:
+  exclude:
+    - build/**
+    - lib/**.freezed.dart
+    - lib/**.g.dart
+    - lib/di/injector.config.dart
+    - lib/generated_plugin_registrant.dart
+    - lib/resources/**
+    - test/**
+
+  errors:
+    library_private_types_in_public_api: ignore
+    depend_on_referenced_packages: ignore
+    use_build_context_synchronously: ignore
+
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
