@@ -19,20 +19,6 @@ use_references_list: true
 package: resources
 
 groups:
-  - path: assets/crypto_icons
-    class_name: CryptoIcons
-    types: [ .svg ]
-    prefix: ic
-    use_underscores: true
-  - path: assets/icons/
-    class_name: Ics
-    types: [ .svg ]
-  - path: assets/images/
-    class_name: Imgs
-    types: [ .png, .jpg, .jpeg ]
-  - path: assets/animations/
-    class_name: SFAnimations
-    types: [ .json ]
   - path: assets/sounds/
     class_name: Sound
     types: [ .mp3 ]

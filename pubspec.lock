@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
+  awesome_notifications:
+    dependency: "direct main"
+    description:
+      name: awesome_notifications
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.21"
   bip32:
     dependency: "direct main"
     description:
@@ -112,7 +119,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   build_runner_core:
     dependency: transitive
     description:
@@ -203,7 +210,7 @@ packages:
       name: dart_code_metrics
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.17.1"
+    version: "4.18.3"
   dart_style:
     dependency: transitive
     description:
@@ -547,7 +554,7 @@ packages:
       name: json_serializable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.3.1"
+    version: "6.3.2"
   lints:
     dependency: transitive
     description:
@@ -764,7 +771,7 @@ packages:
       name: retrofit_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.3+1"
+    version: "4.0.3+2"
   riverpod:
     dependency: transitive
     description:
