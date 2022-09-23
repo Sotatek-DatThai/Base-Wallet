@@ -1,4 +1,4 @@
-package com.sotatek.base_wallet.base_wallet
+package com.sotatek.wallet_base
 
 import io.flutter.embedding.android.FlutterActivity
 
