@@ -23,7 +23,7 @@
         "url": "https://testnet.snowtrace.io",
         "standard": "EIP3091"
       }
-    ],
+    ]
   },
   {
     "name": "Avalanche Network",
@@ -52,6 +52,6 @@
         "url": "https://snowtrace.io",
         "standard": "EIP3091"
       }
-    ],
+    ]
   }
 ]
