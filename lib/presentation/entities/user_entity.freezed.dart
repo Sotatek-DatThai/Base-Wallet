@@ -87,15 +87,23 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserEntity implements _UserEntity {
+class _$_UserEntity with DiagnosticableTreeMixin implements _UserEntity {
   const _$_UserEntity({required this.name});
 
   @override
   final String name;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'UserEntity(name: $name)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'UserEntity'))
+      ..add(DiagnosticsProperty('name', name));
   }
 
   @override
