@@ -19,6 +19,6 @@ use_references_list: true
 package: resources
 
 groups:
-  - path: assets/sounds/
-    class_name: Sound
-    types: [ .mp3 ]
+  - path: assets/networks/
+    class_name: Networks
+    types: [ .json ]
