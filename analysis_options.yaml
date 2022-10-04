@@ -33,7 +33,6 @@ analyzer:
     - lib/di/injector.config.dart
     - lib/generated_plugin_registrant.dart
     - lib/resources/**
-    - test/**
 
   errors:
     library_private_types_in_public_api: ignore
