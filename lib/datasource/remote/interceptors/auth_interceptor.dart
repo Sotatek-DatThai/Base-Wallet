@@ -2,9 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 
-@Injectable()
 class AuthInterceptor extends Interceptor {
   final Dio dio;
 

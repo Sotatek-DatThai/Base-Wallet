@@ -4,5 +4,9 @@ part 'network_isar.g.dart';
 
 @collection
 class NetworkIsar {
-  late Id chainId;
+  final Id chainId;
+
+  NetworkIsar({
+    required this.chainId,
+  });
 }

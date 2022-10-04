@@ -52,8 +52,9 @@ NetworkIsar _networkIsarDeserialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  final object = NetworkIsar();
-  object.chainId = id;
+  final object = NetworkIsar(
+    chainId: id,
+  );
   return object;
 }
 
@@ -78,9 +79,7 @@ List<IsarLinkBase<dynamic>> _networkIsarGetLinks(NetworkIsar object) {
 }
 
 void _networkIsarAttach(
-    IsarCollection<dynamic> col, Id id, NetworkIsar object) {
-  object.chainId = id;
-}
+    IsarCollection<dynamic> col, Id id, NetworkIsar object) {}
 
 extension NetworkIsarQueryWhereSort
     on QueryBuilder<NetworkIsar, NetworkIsar, QWhere> {
