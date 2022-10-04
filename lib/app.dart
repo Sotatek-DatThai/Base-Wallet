@@ -1,24 +1,29 @@
-import 'package:base_wallet/common/routes/app_routes.dart';
+import 'package:base_wallet/routers.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'flavors.dart';
 
-class App extends StatelessWidget {
+final darkModePod = StateProvider((ref) => false);
+
+class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final darkMode = ref.watch(darkModePod);
+    return MaterialApp.router(
       title: F.title,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      onGenerateRoute: (routeSettings) {
-        return MaterialPageRoute(
-          builder:
-              AppRoutes.routes[routeSettings.name] ?? AppRoutes.routes[R.home]!,
-          settings: routeSettings,
-        );
-      },
-      initialRoute: R.home,
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      theme: ThemeData.from(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1c2834),
+          brightness: darkMode ? Brightness.dark : Brightness.light,
+        ),
+        useMaterial3: true,
+      ),
     );
   }
 }
