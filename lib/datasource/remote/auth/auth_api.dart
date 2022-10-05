@@ -11,7 +11,7 @@ abstract class AuthApi {
     Dio dio,
     AuthInterceptor authInterceptor,
     QueueInterceptor queueInterceptor,
-     String baseUrl,
+    String baseUrl,
   ) {
     dio.interceptors.addAll([
       authInterceptor,
