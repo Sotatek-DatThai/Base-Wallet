@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:base_wallet/datasource/local/isar/isar_provider.dart';
 import 'package:base_wallet/datasource/local/isar/network/network_isar_datasource.dart';
+import 'package:base_wallet/datasource/local/secure_storage.dart';
 import 'package:base_wallet/datasource/local/shared_preferences_datasource.dart';
 import 'package:base_wallet/datasource/remote/models/network/network.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -16,10 +18,15 @@ final isarDataSourcePod = FutureProvider(
   },
 );
 
-final sharedPref = FutureProvider((ref) => SharedPreferences.getInstance());
+final sharedPrefPod = FutureProvider((ref) => SharedPreferences.getInstance());
+
+final flutterSecureStoragePod = Provider((ref) => const FlutterSecureStorage());
 
 final sharedPrefDatasourcePod = FutureProvider((ref) async =>
-    SharedPreferencesDataSource(await ref.watch(sharedPref.future)));
+    SharedPreferencesDataSource(await ref.watch(sharedPrefPod.future)));
+
+final secureStoragePod =
+    Provider((ref) => SecureStorage(ref.watch(flutterSecureStoragePod)));
 
 final networkJsonPod = FutureProvider<List<Network>>((ref) async {
   final jsonData = await rootBundle.loadString('assets/json/networks.json');

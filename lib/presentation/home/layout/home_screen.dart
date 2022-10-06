@@ -9,7 +9,9 @@ class HomeScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(homeProvider);
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {  },),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+      ),
       body: Center(
         child: Text(value),
       ),
